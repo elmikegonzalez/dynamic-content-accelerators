@@ -16,13 +16,13 @@
     "prepare-minor-release": "run-s build version:minor",
     "prepare-major-release": "run-s build version:major"
   },
-  "description": "Amplience DC Frontend modules, using HTML Service",
+  "description": "Fork of the Amplience DC front-end modules to be used with Baja Reloaded.",
   "main": "src/",
-  "author": "Amplience",
+  "author": "Amplience SE",
   "dependencies": {
     "lory.js": "2.2.1",
     "poi-js-lib": "git+https://github.com/amplience/poi-js-lib.git#v2.0.0",
-    "gulp-s3-upload": "^1.7.0"
+    "gulp-s3-upload": "^1.7.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
