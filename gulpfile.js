@@ -72,14 +72,14 @@ gulp.task('copy-templates-to-hbs', function() {
     .pipe(gulp.dest('./dist/hbs'));
 });
 
-gulp.task('copy-local-content-types', function() {
+	gulp.task('copy-local-content-types', function() {
   return gulp
     .src([
-      'src/*/contentTypes/*.json'
+      'src/**/contentTypes/*.json'
     ])
     .pipe(replace())
-    .pipe(flatten())
-    .pipe(gulp.dest('dist/contentTypes'));
+    .pipe(flatten({ includeParents: 1} ))
+    .pipe(gulp.dest('dist/contentTypes/'));
 });
 
 gulp.task('copy-node-modules', function() {
@@ -93,8 +93,8 @@ gulp.task('copy-node-modules', function() {
 gulp.task('upload-content-types', async function() {
   gulp.src('./dist/contentTypes/**')
     .pipe(s3({
-        Bucket: 'presalesadisws/demo/maic/baja-reloaded/dc-accelerators/dist/contentTypes', //  Required
-        ACL: 'public-read'       //  Needs to be user-defined
+      Bucket: toReplace.BUCKET_CTS, //  Required
+      ACL: 'public-read'       //  Needs to be user-defined
       },
       {
         // S3 Constructor Options, ie:
@@ -105,8 +105,8 @@ gulp.task('upload-content-types', async function() {
 gulp.task('upload-icons', async function() {
   gulp.src('./dist/icons/**')
     .pipe(s3({
-        Bucket: 'presalesadisws/demo/maic/baja-reloaded/dc-accelerators/dist/icons', //  Required
-        ACL: 'public-read'       //  Needs to be user-defined
+      Bucket: toReplace.BUCKET_ICONS, //  Required
+      ACL: 'public-read'       //  Needs to be user-defined
       },
       {
         // S3 Constructor Options, ie:
