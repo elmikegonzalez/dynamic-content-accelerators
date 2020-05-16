@@ -1,0 +1,406 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "{CONTENT_TYPE_BASEPATH}/_baja/banner.json",
+  "title": "Baja Banner",
+  "description": "A reusable content type for banner content",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "propertyOrder": [
+    "img",
+    "header",
+    "headerFont",
+    "headerFontSize",
+    "headerFontWeight",
+    "headerFontStyle",
+    "headerFontColor",
+    "headerFontBackground",
+    "subheader",
+    "subheaderFont",
+    "subheaderFontSize",
+    "subheaderFontWeight",
+    "subheaderFontStyle",
+    "subheaderFontColor",
+    "description",
+    "descriptionFont",
+    "descriptionFontSize",
+    "descriptionFontWeight",
+    "descriptionFontStyle",
+    "descriptionFontColor",
+    "button",
+    "alignment",
+    "valignment",
+    "percH",
+    "percV",
+    "overlayColor",
+    "overlayOpacity",
+    "stackMobileLayout",
+    "hideBG",
+    "contentImg",
+    "customFont",
+    "style",
+    "analyticsEventLabel"
+  ],
+  "type": "object",
+  "properties": {
+    "img": {
+      "type": "object",
+      "title": "Image",
+      "description": "The background image for the banner",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/_baja/image.json"
+        }
+      ]
+    },
+    "contentImg": {
+      "type": "object",
+      "title": "Content Image",
+      "description": "The image to display with the textual content for this banner",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/_baja/image.json"
+        }
+      ]
+    },
+    "header": {
+      "title": "Header",
+      "description": "Header text for the banner",
+      "validation": "Please enter less than 255 characters",
+      "allOf":[
+        {
+          "$ref":"http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+        }
+      ],
+      "properties":{
+        "values":{
+          "items":{
+            "properties":{
+              "value":{
+                "title": "Header",
+                "description": "Header text for the banner",
+                "type":"string",
+                "minLength":0,
+                "maxLength":255
+              }
+            }
+          }
+        }
+      }
+    },
+    "subheader": {
+      "type": "string",
+      "title": "Subheader",
+      "description": "Sub header text for the banner",
+      "validation": "Please enter less than 255 characters",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "Description text for the banner",
+      "validation": "Please enter less than 2000 characters",
+      "minLength": 0,
+      "maxLength": 2000
+    },
+    "button": {
+      "type": "object",
+      "title": "Link / Button",
+      "description": "The action link / button for the banner",
+      "allOf": [
+        {
+          "$ref": "{CONTENT_TYPE_BASEPATH}/_baja/link.json"
+        }
+      ],
+      "_interpolate": true
+    },
+    "alignment": {
+      "type": "string",
+      "title": "Horizontal Alignment",
+      "description": "Alignment of the text content in the banner (left/right/center). Default is left",
+      "enum": [
+        "left",
+        "right",
+        "center"
+      ]
+    },
+    "valignment": {
+      "type": "string",
+      "title": "Vertical Alignment",
+      "description": "Alignment of the text content in the banner (top/middle/bottom). Default is middle",
+      "enum": [
+        "top",
+        "middle",
+        "bottom"
+      ]
+    },
+    "percH": {
+      "title": "Horizontal alignment percentage",
+      "description": "A value between 0 and 100 (e.g. 30) Default is 0 (left).  Set horizontal alignment to None.",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "percV": {
+      "title": "Vertical alignment percentage",
+      "description": "A value between -50 and 50 (e.g. 30) Default is 0 (middle).  Set vertical alignment to None",
+      "type": "number",
+      "minimum": -50,
+      "maximum": 50
+    },
+    "style": {
+      "type": "string",
+      "title": "Style",
+      "description": "Add classname for CSS styling",
+      "validation": "Please enter between 0 and 100 characters",
+      "minLength": 0,
+      "maxLength": 100
+    },
+    "hideBG": {
+      "type": "boolean",
+      "title": "Hide Overlay",
+      "description": "Hide Overlay behind banner info. Default is false"
+    },
+    "stackMobileLayout": {
+      "type": "boolean",
+      "title": "Stack Mobile Layout",
+      "description": "Enable to allow banner text to stack underneath the image on small screens. Default is false"
+    },
+    "analyticsEventLabel": {
+      "type": "string",
+      "title": "Analytics Event Label",
+      "description": "Textual description of the campaign used to group analytics"
+    },
+    "headerFontColor": {
+      "type": "string",
+      "format": "color",
+      "title": "Header Font Color",
+      "description": "Choose header font color"
+    },
+    "headerFontBackground": {
+      "type": "string",
+      "format": "color",
+      "title": "Header Font Background Highlight",
+      "description": "Choose header highlight color"
+    },
+    "subheaderFontColor": {
+      "type": "string",
+      "format": "color",
+      "title": "Subheader Font Color",
+      "description": "Choose subheader font color"
+    },
+    "descriptionFontColor": {
+      "type": "string",
+      "format": "color",
+      "title": "Description Font Color",
+      "description": "Choose description font color"
+    },
+    "overlayColor": {
+      "type": "string",
+      "format": "color",
+      "title": "Overlay Color",
+      "description": "Choose overlay color"
+    },
+    "overlayOpacity":{
+      "type": "number",
+      "title": "Overlay Opacity",
+      "description": "Enter a value between 0 and 1 (e.g. 0.5)",
+      "minimum": 0,
+      "maximum": 1.01
+    },
+    "headerFont": {
+      "title": "Header Font",
+      "description": "Pick from the list of available fonts",
+      "type": "string",
+      "enum": [
+        "proxima-nova",
+        "proxima-nova-condensed",
+        "proxima-nova-extra-condensed",
+        "chinchilla",
+        "continuo",
+        "grandma",
+        "alternate-gothic-no-2-d",
+        "josefin-slab",
+        "trajan-pro-3",
+        "azo-sans-uber",
+        "hwt-republic-gothic-outline",
+        "objektiv-mk1",
+        "old-man-eloquent",
+        "emily-austin",
+        "lamar-pen",
+        "mrs-eaves-xl-serif",
+        "termina",
+        "rift-soft",
+        "axia-stencil",
+        "farm-new",
+        "big-caslon-fb",
+        "bureau-grot",
+        "bureau-grot-condensed",
+        "miller-banner",
+        "odile",
+        "dapifer-stencil",
+        "active",
+        "bebas-neue-rounded",
+        "smoothy"
+      ]
+    },
+    "customFont": {
+      "type": "string",
+      "title": "Custom Font",
+      "description": "Add the font-family after adding it to your css"
+    },
+    "headerFontSize": {
+      "type": "number",
+      "title": "Header Font Size",
+      "description": "Font size",
+      "validation": "Please enter a value between 12 and 128px",
+      "minimum": 12,
+      "maximum": 200
+    },
+    "headerFontWeight": {
+      "type": "number",
+      "title": "Header Font Weight",
+      "description": "Font Weight",
+      "validation": "Please enter a value between 100 and 600",
+      "minimum": 100,
+      "maximum": 700
+    },
+    "headerFontStyle": {
+      "type": "string",
+      "title": "Header Font Style",
+      "description": "Font Style",
+      "enum": [
+        "normal",
+        "italic",
+        "oblique"
+      ]
+    },
+    "subheaderFont": {
+      "title": "Sub-Header Font",
+      "description": "Pick from the list of available fonts",
+      "type": "string",
+      "enum": [
+        "proxima-nova",
+        "proxima-nova-condensed",
+        "proxima-nova-extra-condensed",
+        "chinchilla",
+        "continuo",
+        "grandma",
+        "alternate-gothic-no-2-d",
+        "josefin-slab",
+        "trajan-pro-3",
+        "azo-sans-uber",
+        "hwt-republic-gothic-outline",
+        "objektiv-mk1",
+        "old-man-eloquent",
+        "emily-austin",
+        "lamar-pen",
+        "mrs-eaves-xl-serif",
+        "termina",
+        "rift-soft",
+        "axia-stencil",
+        "farm-new",
+        "big-caslon-fb",
+        "bureau-grot",
+        "bureau-grot-condensed",
+        "miller-banner",
+        "odile",
+        "dapifer-stencil",
+        "active",
+        "bebas-neue-rounded",
+        "smoothy"
+      ]
+    },
+    "subheaderFontSize": {
+      "type": "number",
+      "title": "Sub-Header Font Size",
+      "description": "Font size",
+      "validation": "Please enter a value between 12 and 128px",
+      "minimum": 12,
+      "maximum": 200
+    },
+    "subheaderFontWeight": {
+      "type": "number",
+      "title": "Sub-Header Font Weight",
+      "description": "Font Weight",
+      "validation": "Please enter a value between 100 and 600",
+      "minimum": 100,
+      "maximum": 700
+    },
+    "subheaderFontStyle": {
+      "type": "string",
+      "title": "Sub-Header Font Style",
+      "description": "Font Style",
+      "enum": [
+        "normal",
+        "italic",
+        "oblique"
+      ]
+    },
+    "descriptionFont": {
+      "title": "Description Font",
+      "description": "Pick from the list of available fonts",
+      "type": "string",
+      "enum": [
+        "proxima-nova",
+        "proxima-nova-condensed",
+        "proxima-nova-extra-condensed",
+        "chinchilla",
+        "continuo",
+        "grandma",
+        "alternate-gothic-no-2-d",
+        "josefin-slab",
+        "trajan-pro-3",
+        "azo-sans-uber",
+        "hwt-republic-gothic-outline",
+        "objektiv-mk1",
+        "old-man-eloquent",
+        "emily-austin",
+        "lamar-pen",
+        "mrs-eaves-xl-serif",
+        "termina",
+        "rift-soft",
+        "axia-stencil",
+        "farm-new",
+        "big-caslon-fb",
+        "bureau-grot",
+        "bureau-grot-condensed",
+        "miller-banner",
+        "odile",
+        "dapifer-stencil",
+        "active",
+        "bebas-neue-rounded",
+        "smoothy"
+      ]
+    },
+    "descriptionFontSize": {
+      "type": "number",
+      "title": "Description Font Size",
+      "description": "Font size",
+      "validation": "Please enter a value between 12 and 128px",
+      "minimum": 12,
+      "maximum": 200
+    },
+    "descriptionFontWeight": {
+      "type": "number",
+      "title": "Description Font Weight",
+      "description": "Font Weight",
+      "validation": "Please enter a value between 100 and 600",
+      "minimum": 100,
+      "maximum": 700
+    },
+    "descriptionFontStyle": {
+      "type": "string",
+      "title": "Description Font Style",
+      "description": "Font Style",
+      "enum": [
+        "normal",
+        "italic",
+        "oblique"
+      ]
+    }
+  }
+}
