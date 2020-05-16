@@ -2,4 +2,3 @@ node_modules/*
 .idea
 private/devsolutions.json
 private/presales.json
-dist/*
