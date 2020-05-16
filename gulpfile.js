@@ -72,15 +72,25 @@ gulp.task('copy-templates-to-hbs', function() {
     .pipe(gulp.dest('./dist/hbs'));
 });
 
-	gulp.task('copy-local-content-types', function() {
+	gulp.task('copy-top-content-types', function() {
   return gulp
     .src([
-      'src/**/contentTypes/*.json'
+      'src/*/contentTypes/*.json'
+    ])
+    .pipe(replace())
+    .pipe(flatten())
+    .pipe(gulp.dest('dist/contentTypes/'));
+});
+
+  gulp.task('copy-folder-content-types', gulp.series(['copy-top-content-types'], function() {
+  return gulp
+    .src([
+      'src/_*/*/contentTypes/*.json'
     ])
     .pipe(replace())
     .pipe(flatten({ includeParents: 1} ))
     .pipe(gulp.dest('dist/contentTypes/'));
-});
+}));
 
 gulp.task('copy-node-modules', function() {
   return gulp
@@ -205,7 +215,7 @@ gulp.task(
     'copy-icons',
     'copy-templates',
     'copy-templates-to-hbs',
-    'copy-local-content-types',
+    'copy-folder-content-types',
     'addLoryLicense',
     'build-js',
     'minify-js',
