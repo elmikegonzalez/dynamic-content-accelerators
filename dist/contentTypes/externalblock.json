@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://unpkg.com/@amplience/dynamic-content-accelerators/dist/contentTypes/externalblock.json",
+  "id": "https://presalesadisws.s3.amazonaws.com/demo/maic/baja/dist/contentTypes/externalblock.json",
   "title": "External block",
   "description": "External block accelerator",
   "allOf": [

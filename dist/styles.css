@@ -139,57 +139,6 @@
   }
 }
 
-.amp-dc-blog {
-  overflow: hidden;
-  margin: 40px auto;
-  max-width: 980px;
-  padding: 0 20px;
-}
-
-.amp-dc-blog .amp-dc-block-wrap {
-  margin-top: 50px;
-}
-
-.amp-dc-blog .amp-dc-blog-title {
-  font-size: 2em;
-  text-align: center;
-}
-
-.amp-dc-blog .amp-dc-blog-content {
-  margin-top: 20px;
-}
-
-.amp-dc-snippet .amp-dc-image {
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-  display: block;
-}
-
-.amp-dc-snippet .amp-dc-image img {
-  width: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.amp-dc-snippet .amp-dc-title {
-  text-transform: uppercase;
-  font-size: 2em;
-  margin: 20px;
-}
-
-.amp-dc-snippet .amp-dc-description {
-  padding: 20px;
-}
-
-.amp-dc-snippet .amp-dc-link {
-  margin: 20px;
-  font-weight: bold;
-}
-
 .amp-dc-card {
   width: 100%;
   display: inline-block;
@@ -322,6 +271,57 @@
   .amp-dc-prod-1-rows .amp-dc-card {
     width: 100%;
   }
+}
+
+.amp-dc-blog {
+  overflow: hidden;
+  margin: 40px auto;
+  max-width: 980px;
+  padding: 0 20px;
+}
+
+.amp-dc-blog .amp-dc-block-wrap {
+  margin-top: 50px;
+}
+
+.amp-dc-blog .amp-dc-blog-title {
+  font-size: 2em;
+  text-align: center;
+}
+
+.amp-dc-blog .amp-dc-blog-content {
+  margin-top: 20px;
+}
+
+.amp-dc-snippet .amp-dc-image {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  display: block;
+}
+
+.amp-dc-snippet .amp-dc-image img {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.amp-dc-snippet .amp-dc-title {
+  text-transform: uppercase;
+  font-size: 2em;
+  margin: 20px;
+}
+
+.amp-dc-snippet .amp-dc-description {
+  padding: 20px;
+}
+
+.amp-dc-snippet .amp-dc-link {
+  margin: 20px;
+  font-weight: bold;
 }
 
 .amp-dc-external-block .test {
@@ -950,17 +950,6 @@
   }
 }
 
-.amp-dc-text {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 16px;
-  color: #565656;
-}
-
-.amp-dc-text li {
-  list-style-position: outside;
-}
-
 .inactive-video {
   position: relative;
   z-index: 100;
@@ -1026,4 +1015,15 @@
 
 .amp-dc-video-wrap .pause-button.inactive {
   display: none;
+}
+
+.amp-dc-text {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #565656;
+}
+
+.amp-dc-text li {
+  list-style-position: outside;
 }
