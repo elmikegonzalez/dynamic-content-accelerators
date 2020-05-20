@@ -62,15 +62,25 @@ gulp.task('copy-templates', function() {
     .pipe(gulp.dest('dist/templates'));
 });
 
-gulp.task('copy-templates-to-hbs', function() {
+gulp.task('copy-top-templates-to-hbs', function() {
   return gulp
     .src(['src/*/templates/*.html'])
     .pipe(flatten())
     .pipe(rename(function(path) {
       path.extname = '.hbs';
     }))
-    .pipe(gulp.dest('./dist/hbs'));
+    .pipe(gulp.dest('./dist/hbs/accelerators'));
 });
+
+gulp.task('copy-folder-templates-to-hbs', gulp.series(['copy-top-templates-to-hbs'], function() {
+  return gulp
+    .src(['src/_*/*/templates/*.html'])
+    .pipe(flatten({ includeParents: 1} ))
+    .pipe(rename(function(path) {
+      path.extname = '.hbs';
+    }))
+    .pipe(gulp.dest('./dist/hbs/'));
+}));
 
 	gulp.task('copy-top-content-types', function() {
   return gulp
@@ -214,7 +224,7 @@ gulp.task(
     'copy-node-modules',
     'copy-icons',
     'copy-templates',
-    'copy-templates-to-hbs',
+    'copy-folder-templates-to-hbs',
     'copy-folder-content-types',
     'addLoryLicense',
     'build-js',
