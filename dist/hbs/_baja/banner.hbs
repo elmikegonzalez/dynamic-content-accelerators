@@ -1,0 +1,42 @@
+<div class="{{#if style}}{{style}}-{{/if}}amp-dc-banner js_dc_banner">
+    <div class="{{#if style}}{{style}}-{{/if}}amp-dc-banner-pic-wrap">
+        {{templateChooser img}}
+    </div>
+    <div class="{{#if style}}{{style}}-{{/if}}amp-dc-banner-content-image {{#if style}}{{style}}-{{/if}}amp-dc-content-image-align-{{#if alignment}}{{alignment}}{{else}}left{{/if}}">
+        {{templateChooser contentImg}}
+    </div>
+    <div class="{{#if style}}{{style}}-{{/if}}amp-dc-banner-info-wrap
+    {{#if stackMobileLayout}}{{#if style}}{{style}}{{/if}}amp-dc-info-bottom{{/if}}
+        {{#unless header}}
+            {{#unless subheader}}
+                {{#unless description}}
+                    {{#unless button.label}}
+                        {{#if style}}{{style}}-{{/if}}amp-dc-hide
+                     {{/unless}}
+                {{/unless}}
+            {{/unless}}
+        {{/unless}}"
+         data-align="{{#if alignment}}{{alignment}}{{else}}left{{/if}}"  data-valign="{{#if valignment}}{{valignment}}{{else}}middle{{/if}}"
+         style="
+             {{#if percH}}left:{{percH}}%;{{/if}}
+             {{#if percV}}top:{{percV}}%;{{/if}}"
+    >
+
+        <div class="{{#if style}}{{style}}-{{/if}}amp-dc-banner-info" id="opacity" style="{{#compare hideBG "==" false}}background:{{overlayColor}};opacity:{{overlayOpacity}};{{/compare}}{{#compare hideBG "==" true}}background:transparent;{{/compare}}">
+        {{#if header}}
+        <div class="{{#if style}}{{style}}-{{/if}}amp-dc-banner-header" id="header" style="{{#if headerFont}}font-family:{{headerFont}},sans-serif;{{else}}{{#if customFont}}font-family:{{customFont}},sans-serif;{{/if}}{{/if}}{{#if headerFontSize}}font-size:{{headerFontSize}}px;{{/if}}{{#if headerFontWeight}}font-weight:{{headerFontWeight}};{{/if}}{{#if headerFontStyle}}font-style:{{headerFontStyle}};{{/if}}{{#if headerFontColor}}color:{{headerFontColor}};{{/if}}{{#if headerFontBackground}}background:{{headerFontBackground}};{{/if}}">{{header}}</div>
+        {{/if}}
+        {{#if subheader}}
+        <div class="{{#if style}}{{style}}-{{/if}}amp-dc-banner-subheader" id="subheader" data-align="{{#if alignment}}{{alignment}}{{else}}left{{/if}}" style="{{#if subheaderFont}}font-family:{{subheaderFont}},sans-serif;{{else}}{{#if customFont}}font-family:{{customFont}},sans-serif;{{/if}}{{/if}}{{#if subheaderFontSize}}font-size:{{subheaderFontSize}}px;{{/if}}{{#if subheaderFontWeight}}font-weight:{{subheaderFontWeight}};{{/if}}{{#if subheaderFontStyle}}font-style:{{subheaderFontStyle}};{{/if}}{{#if subheaderFontColor}}color:{{subheaderFontColor}};{{/if}}{{#if subheaderFontBackground}}background:{{subheaderFontBackground}};{{/if}}">{{subheader}}</div>
+
+        {{/if}}
+        {{#if description}}
+        <div class="{{#if style}}{{style}}-{{/if}}amp-dc-banner-description" id="description" data-align="{{#if alignment}}{{alignment}}{{else}}left{{/if}}" style="{{#if descriptionFont}}font-family:{{descriptionFont}},sans-serif;{{else}}{{#if customFont}}font-family:{{customFont}},sans-serif;{{/if}}{{/if}}{{#if descriptionFontSize}}font-size:{{descriptionFontSize}}px;{{/if}}{{#if descriptionFontWeight}}font-weight:{{descriptionFontWeight}};{{/if}}{{#if descriptionFontStyle}}font-style:{{descriptionFontStyle}};{{/if}}{{#if descriptionFontColor}}color:{{descriptionFontColor}};{{/if}}{{#if descriptionFontBackground}}background:{{descriptionFontBackground}};{{/if}}">{{description}}</div>
+        {{/if}}
+        {{#if button.label}}
+        <a href="{{button.value}}"
+           class="{{#if style}}{{style}}-{{/if}}amp-dc-banner-button {{#if style}}{{style}}{{/if}}">{{button.label}}</a>
+        {{/if}}
+    </div>
+</div>
+</div>
