@@ -69,7 +69,7 @@ gulp.task('copy-top-templates-to-hbs', function() {
     .pipe(rename(function(path) {
       path.extname = '.hbs';
     }))
-    .pipe(gulp.dest('./dist/hbs/accelerators'));
+    .pipe(gulp.dest('./dist/hbs/_accelerators'));
 });
 
 gulp.task('copy-folder-templates-to-hbs', gulp.series(['copy-top-templates-to-hbs'], function() {
