@@ -1,5 +1,5 @@
 {
-  "CONTENT_TYPE_BASEPATH": "https://presalesadisws.s3.amazonaws.com/demo/maic/baja/dist/contentTypes",
+  "CONTENT_TYPE_BASEPATH": "https://presalesadisws.s3.amazonaws.com/demo/maic/bajareloaded/dist/contentTypes",
   "COMPANY_TAG": "mgonzalez",
   "BUCKET_CTS": "presalesadisws/demo/maic/bajareloaded/dist/contentTypes",
   "BUCKET_ICONS": "presalesadisws/demo/maic/bajareloaded/dist/icons"
